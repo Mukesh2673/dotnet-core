@@ -8,7 +8,8 @@ builder.Services.AddControllers();
 
 // OpenAPI/Swagger
 builder.Services.AddOpenApi();
-
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 // Register DbContext
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(
@@ -20,6 +21,9 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
+
 }
 
 app.UseHttpsRedirection();

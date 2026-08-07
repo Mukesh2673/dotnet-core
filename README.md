@@ -274,3 +274,7 @@ MyFirstApi/
 ├── appsettings.json      # Connection string lives here
 └── Program.cs            # Startup, DI, endpoints
 ```
+# check installed packages
+dotnet list package
+# check dot net version
+dotnet --version
